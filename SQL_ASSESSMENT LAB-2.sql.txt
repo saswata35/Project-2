@@ -1,0 +1,138 @@
+Use the Database and table from Week9 Session1 lab.Insert 5 records and retrieve data from the table. 
+Code:-
+1.a.Insert records in Student table-->
+INSERT INTO Student(StudentID,FirstName,LastName,DateOfBirth,Gender,Email,Phone) VALUES
+    -> ('S101','Saswata','Banerjee','2001-12-20','M','sasban@gmail.com','7439593227'),
+    -> ('S102','Navanil','Ghosh','2000-10-10','M','navanilghosh@gmail.com','4784679134'),
+    -> ('S103','Arka','Dutta','2013-08-08','F','arkadutta@gmail.com','7614579536'),
+    -> ('S104','Avijit','Ghosh','2011-09-08','F','avijitghosh@gmail.com','6475624879'),
+    -> ('S105','Manas','Manna','2011-06-05','M','manasmanna@gamil.com','7614587654');
+b.Retrieve data from Student table-->
+SELECT * FROM Student;
+c.
+Select FirstName,LastName from Student;
+Output:-
+a.
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+b. +-----------+-----------+----------+---------------------+--------+------------------------+------------+
+| StudentID | FirstName | LastName | DateOfBirth         | Gender | Email                  | Phone      |
++-----------+-----------+----------+---------------------+--------+------------------------+------------+
+| S101      | Saswata   | Banerjee | 2001-12-20 00:00:00 | M      | sasban@gmail.com       | 7439593227 |
+| S102      | Navanil   | Ghosh    | 2000-10-10 00:00:00 | M      | navanilghosh@gmail.com | 4784679134 |
+| S103      | Arka      | Dutta    | 2013-08-08 00:00:00 | F      | arkadutta@gmail.com    | 7614579536 |
+| S104      | Avijit    | Ghosh    | 2011-09-08 00:00:00 | F      | avijitghosh@gmail.com  | 6475624879 |
+| S105      | Manas     | Manna    | 2011-06-05 00:00:00 | M      | manasmanna@gamil.com   | 7614587654 |
++-----------+-----------+----------+---------------------+--------+------------------------+------------+
+5 rows in set (0.00 sec)
+c. 
++-----------+----------+
+| FirstName | LastName |
++-----------+----------+
+| Saswata   | Banerjee |
+| Navanil   | Ghosh    |
+| Arka      | Dutta    |
+| Avijit    | Ghosh    |
+| Manas     | Manna    |
++-----------+----------+
+5 rows in set (0.00 sec)
+2.a.Insert records in Course table-->
+INSERT INTO Course(CourseID,CourseTitle,Credits) VALUES
+    -> ('C101','Math101',10),
+    -> ('C102','Physics101',20),
+    -> ('C103','Chemistry101',30);
+b.Retrieve data from Course Table-->
+select * from Course;
+Output:-
+a.
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+b.
++----------+--------------+---------+
+| CourseID | CourseTitle  | Credits |
++----------+--------------+---------+
+| C101     | Math101      |      10 |
+| C102     | Physics101   |      20 |
+| C103     | Chemistry101 |      30 |
++----------+--------------+---------+
+3 rows in set (0.00 sec)
+3.a.Insert records of Instructor table-->
+INSERT INTO Instructor(InstructorID,Email,FirstName,LastName) VALUES
+    -> ('I101','maharaj@example.com','Maharaj','Singh'),
+    -> ('I102','sourav@example.com','Sourav','Roy'),
+  -> ('I103','anamika@example.com','Anamika','Das');
+b.Retrieve data from Instructor table-->
+select * from Instructor;
+Output:-
+a.
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+b.
++--------------+---------------------+-----------+----------+
+| InstructorID | Email               | FirstName | LastName |
++--------------+---------------------+-----------+----------+
+| I101         | maharaj@example.com | Maharaj   | Singh    |
+| I102         | sourav@example.com  | Sourav    | Roy      |
+| I103         | anamika@example.com | Anamika   | Das      |
++--------------+---------------------+-----------+----------+
+3 rows in set (0.00 sec)
+4. a. Insert records of Enrollment table-->
+ INSERT INTO Enrollment(EnrollmentID,StudentID,CourseID,InstructorID) VALUES
+    -> ('E1001','S101','C101','I101'),
+    -> ('E1002','S102','C101','I101'),
+  -> ('E1003','S103','C102','I102');
+b.Retrieve data from Enrollment table-->
+select * from Enrollment;
+Output:-
+a.
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+b.
++--------------+-----------+----------+--------------+
+| EnrollmentID | StudentID | CourseID | InstructorID |
++--------------+-----------+----------+--------------+
+| E1001        | S101      | C101     | I101         |
+| E1002        | S102      | C101     | I101         |
+| E1003        | S103      | C102     | I102         |
++--------------+-----------+----------+--------------+
+3 rows in set (0.00 sec)
+5. a.Insert records of Score table-->
+ INSERT INTO Score
+    -> (ScoreID,StudentID,CourseID,CreditObtained,DateOfExam) VALUES
+    -> ('SC101','S101','C101','10','2020-12-12'),
+  -> ('SC102','S102','C101','15','2020-12-12');
+b.Retrieve data from Score table-->
+select * from Score ;
+Output:-
+a.
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+b.
++---------+-----------+----------+----------------+---------------------+
+| ScoreID | StudentID | CourseID | CreditObtained | DateOfExam          |
++---------+-----------+----------+----------------+---------------------+
+| SC101   | S101      | C101     | 10             | 2020-12-12 00:00:00 |
+| SC102   | S102      | C101     | 15             | 2020-12-12 00:00:00 |
++---------+-----------+----------+----------------+---------------------+
+2 rows in set (0.00 sec)
+6. a.Insert records of Feedback table-->
+INSERT INTO Feedback(StudentID,InstructorName,Feedback) VALUES
+    -> ('S101','I101','Session was impressive'),
+    -> ('S102','I101','Topic was well varge and good explained'),
+  -> ('S103','I102','Session was super');
+b.Retrieve data from Feedback table-->
+select * from Feedback;
+Output:-
+a.
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+b.
+
++------------+-----------+----------------+-----------------------------------------+
+| FeedbackID | StudentID | InstructorName | Feedback                                |
++------------+-----------+----------------+-----------------------------------------+
+|          1 | S101      | I101           | Session was impressive                  |
+|          2 | S102      | I101           | Topic was well varge and good explained |
+|          3 | S103      | I102           | Session was super                       |
++------------+-----------+----------------+-----------------------------------------+
+3 rows in set (0.00 sec)
